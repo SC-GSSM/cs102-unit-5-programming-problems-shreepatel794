@@ -29,9 +29,13 @@ public class Unit5 {
     // TODO: Declare private instance variables:
     //   - name (String)
     //   - age (int)
+    private String name = "";
+    private int age = 0;
+    
 
     // TODO: Declare a private static variable:
     //   - count (int) — tracks how many Unit5 objects have been created
+    private static int count = 0;
 
     /**
      * Default constructor. Sets name to "Unknown" and age to 0.
@@ -42,6 +46,11 @@ public class Unit5 {
      * <p>Hint: Initialize name = "Unknown" and age = 0, then do count++</p>
      */
     // TODO: Implement default constructor
+    public Unit5(){
+        this.name = "Unknown";
+        this.age = 0;
+        count++; 
+    }
 
     /**
      * Parameterized constructor. Sets name and age to the given values.
@@ -57,7 +66,11 @@ public class Unit5 {
      * @param age the age to set
      */
     // TODO: Implement parameterized constructor
-
+        public Unit5(String name, int age){
+        this.name = name;
+        this.age = age;
+        count++; 
+    }
     /**
      * Overloaded constructor. Takes only a name, sets age to 0.
      * Must increment the static count variable.
@@ -71,35 +84,48 @@ public class Unit5 {
      * @param name the name to set
      */
     // TODO: Implement overloaded constructor (name only)
-
+      // TODO: Implement parameterized constructor
+        public Unit5(String name){
+        this.name = name;
+        this.age = 0;
+        count++; 
+    }
     /**
      * Returns the name of this Unit5 object.
      *
      * @return the name
      */
     // TODO: Implement getName()
-
+    public String getName(){
+        return this.name;
+    }
     /**
      * Sets the name of this Unit5 object.
      *
      * @param name the new name
      */
     // TODO: Implement setName()
-
+    public void setName(String name){
+        this.name = name; 
+    }
     /**
      * Returns the age of this Unit5 object.
      *
      * @return the age
      */
     // TODO: Implement getAge()
-
+        public int getAge(){
+        return this.age;
+    }
     /**
      * Sets the age of this Unit5 object.
      *
      * @param age the new age
      */
     // TODO: Implement setAge()
-
+        public void setAge(int age){
+            this.age = age; 
+    }
     /**
      * Returns the total number of Unit5 objects created.
      * This is a static method because count belongs to the class, not an instance.
@@ -107,7 +133,9 @@ public class Unit5 {
      * @return the count of objects created
      */
     // TODO: Implement static getCount()
-
+        public static int getCount(){
+        return count;
+    }
     /**
      * Returns a string representation of this Unit5 object.
      * Format: Unit5{name='[name]', age=[age]}
@@ -123,4 +151,7 @@ public class Unit5 {
      * @return formatted string representation
      */
     // TODO: Override toString()
+    public String toString(){
+        return "Unit5{name='" + name + "', age=" + age + "}";
+    }
 }
